@@ -5,6 +5,7 @@ positive number. */
 #include <stdlib.h>
 #include <math.h>
 #include <ctype.h>
+#include <complex.h>
 
 /* This is the main function. */
 int main(int argc, char* argv[]) {
@@ -17,13 +18,21 @@ int main(int argc, char* argv[]) {
 	// Validating number
 	for (int i=0; argv[1][i]!='\0'; ++i) {
 		if (!isdigit(argv[1][i])) {
-			printf("Invalid number!\n");
-			return 1;
+			if (!(i==0 && argv[1][0]=='-')) {
+				printf("Invalid number!\n");
+				return 1;
+			}
 		}
 	}
 
 	int input = atoi(argv[1]);
-	printf("Sqrt of %d is %f\n",input,sqrt(input));
+	if (input < 0) {
+		float complex ans = csqrt(input);
+		printf("Sqrt of %d is %.4f + %.4fi\n", creal(ans), cimag(ans));
+	} else {
+		printf("Sqrt of %d is %f\n",input,sqrt(input));
+	}
+
 	printf("End of program. Exiting.\n");
 	return(0);
 
