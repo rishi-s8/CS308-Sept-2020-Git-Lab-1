@@ -28,9 +28,9 @@ int main(int argc, char* argv[]) {
 	int input = atoi(argv[1]);
 	if (input < 0) {
 		float complex ans = csqrt(input);
-		printf("Sqrt of %d is %.4f + %.4fi\n", creal(ans), cimag(ans));
+		printf("The Sqrt of %d is %.4f + %.4fi\n", creal(ans), cimag(ans));
 	} else {
-		printf("Sqrt of %d is %f\n",input,sqrt(input));
+		printf("The Sqrt of %d is %f\n",input,sqrt(input));
 	}
 
 	printf("End of program. Exiting.\n");
