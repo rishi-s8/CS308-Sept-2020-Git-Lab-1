@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
 	int input = atoi(argv[1]);
 	if (input < 0) {
 		float complex ans = csqrt(input);
-		printf("DEBUG: Square root of %d is %.4f + %.4fi\n", creal(ans), cimag(ans));
+		printf("NEGSUPPORT: Square root of %d is %.4f + %.4fi\n", creal(ans), cimag(ans));
 	} else {
 		printf("DEBUG: Square root of %d is %f\n",input,sqrt(input));
 	}
